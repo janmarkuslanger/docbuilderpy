@@ -24,7 +24,6 @@ def test_analyze_definitions_with_class():
     code = '''
 class Foo:
     """This is a test class"""
-    
     def bar(self, x):
         """This is a test method"""
         return x
