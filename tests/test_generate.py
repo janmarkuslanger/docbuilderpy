@@ -9,8 +9,8 @@ def mock_generator():
     return MagicMock(spec=Generator)
 
 
-@patch("docspy.generate.analyze_definitions")
-@patch("docspy.generate.load_file")
+@patch("docbuilderpy.generate.analyze_definitions")
+@patch("docbuilderpy.generate.load_file")
 @patch("os.walk")
 def test_generate(
     mock_os_walk, mock_load_file, mock_analyze_definitions, mock_generator, tmp_path
