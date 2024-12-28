@@ -1,7 +1,7 @@
 import os
-from docspy.analyze_definitions import analyze_definitions
-from docspy.load_file import load_file
-from docspy.generator import Generator
+from docbuilderpy.analyze_definitions import analyze_definitions
+from docbuilderpy.load_file import load_file
+from docbuilderpy.generator import Generator
 
 
 def generate(path: str, output: str, generator: Generator):

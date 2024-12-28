@@ -1,6 +1,6 @@
 from typing import List
-from docspy.generator import Generator
-from docspy.definitions import Definition
+from docbuilderpy.generator import Generator
+from docbuilderpy.definitions import Definition
 
 
 class TestGenerator(Generator):

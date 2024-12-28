@@ -1,6 +1,6 @@
 from typing import List
-from docspy.definitions import Definition
-from docspy.generator import Generator
+from docbuilderpy.definitions import Definition
+from docbuilderpy.generator import Generator
 
 
 class Markdown(Generator):

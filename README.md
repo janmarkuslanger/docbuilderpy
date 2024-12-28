@@ -1,22 +1,22 @@
 
-# Docspy
+# docbuilderpy
 
-**Docspy** is a tool for easily generating documentation for Python projects. It provides default functionality for generating documentation in Markdown format and allows users to include custom generators.
+**docbuilderpy** is a tool for easily generating documentation for Python projects. It provides default functionality for generating documentation in Markdown format and allows users to include custom generators.
 
 ## 🚀 Installation
 
-To install **Docspy**, run the following command:
+To install **docbuilderpy**, run the following command:
 
 ```bash
-pip install docspy
+pip install docbuilderpy
 ```
 
 ## 📖 Usage
 
-Once installed, you can use the `docspy` command in the terminal. The basic syntax is:
+Once installed, you can use the `docbuilderpy` command in the terminal. The basic syntax is:
 
 ```bash
-docspy PATH [OPTIONS]
+docbuilderpy PATH [OPTIONS]
 ```
 
 ### Options
@@ -33,7 +33,7 @@ docspy PATH [OPTIONS]
 Create documentation in Markdown format and save it to the default output path `docs`:
 
 ```bash
-docspy ./my_project
+docbuilderpy ./my_project
 ```
 
 #### Save documentation to a custom path
@@ -41,7 +41,7 @@ docspy ./my_project
 Create documentation and save it to a custom directory:
 
 ```bash
-docspy ./my_project --output ./custom_docs
+docbuilderpy ./my_project --output ./custom_docs
 ```
 
 #### Use a custom generator
@@ -49,7 +49,7 @@ docspy ./my_project --output ./custom_docs
 Use a custom generator class from the file `custom_generator.py`:
 
 ```bash
-docspy ./my_project --custom_generator ./custom_generator.py
+docbuilderpy ./my_project --custom_generator ./custom_generator.py
 ```
 
 ## 🔧 Creating Custom Generators
@@ -61,9 +61,9 @@ If you want to extend the default functionality, you can create your own generat
 Create a file `custom_generator.py` with the following content:
 
 ```python
-from docspy.generate import Generator
+from docbuilderpy.generate import Generator
 from typing import List
-from docspy.definitions import Definition
+from docbuilderpy.definitions import Definition
 
 class CustomGenerator(Generator):
     def generate(self, definitions: List[Definition]) -> str:
@@ -73,7 +73,7 @@ class CustomGenerator(Generator):
 Then, use this class with the `--custom_generator` option:
 
 ```bash
-docspy ./my_project --custom_generator ./custom_generator.py
+docbuilderpy ./my_project --custom_generator ./custom_generator.py
 ```
 
 ## 🤝 Contributing
@@ -86,4 +86,4 @@ This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-Enjoy using **Docspy**! If you have questions or issues, feel free to open an issue on GitHub.
+Enjoy using **docbuilderpy**! If you have questions or issues, feel free to open an issue on GitHub.
