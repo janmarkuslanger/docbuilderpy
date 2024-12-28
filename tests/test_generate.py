@@ -1,3 +1,4 @@
+import pytest
 from unittest.mock import MagicMock, patch
 from docpy.generate import generate
 from docpy.generator import Generator
