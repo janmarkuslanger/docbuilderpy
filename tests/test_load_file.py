@@ -1,4 +1,3 @@
-import pytest
 from docpy.load_file import load_file
 
 

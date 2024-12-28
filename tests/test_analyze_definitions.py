@@ -1,4 +1,3 @@
-import pytest
 from docpy.analyze_definitions import analyze_definitions
 from docpy.definitions import FunctionDefinition, ClassDefinition, MethodDefinition
 

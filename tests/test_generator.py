@@ -1,4 +1,3 @@
-import pytest
 from typing import List
 from docpy.generator import Generator
 from docpy.definitions import Definition

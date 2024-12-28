@@ -1,4 +1,3 @@
-import pytest
 from docpy.definitions import (
     Definition,
     FunctionDefinition,
