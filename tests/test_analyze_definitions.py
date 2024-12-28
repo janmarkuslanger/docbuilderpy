@@ -1,5 +1,9 @@
 from docbuilderpy.analyze_definitions import analyze_definitions
-from docbuilderpy.definitions import FunctionDefinition, ClassDefinition, MethodDefinition
+from docbuilderpy.definitions import (
+    FunctionDefinition,
+    ClassDefinition,
+    MethodDefinition,
+)
 
 
 def test_analyze_definitions_with_function():
