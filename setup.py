@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="docpy",
+    name="docspy",
     version="0.0.1",
     description="Simple creation of documentation for Python projects.",
     author="Jan-Markus Langer",
@@ -9,7 +9,7 @@ setup(
     install_requires=["click"],
     entry_points={
         "console_scripts": [
-            "docpy=docpy.cli:main",
+            "docspy=docspy.cli:main",
         ],
     },
 )

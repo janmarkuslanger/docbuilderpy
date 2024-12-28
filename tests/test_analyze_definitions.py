@@ -1,5 +1,5 @@
-from docpy.analyze_definitions import analyze_definitions
-from docpy.definitions import FunctionDefinition, ClassDefinition, MethodDefinition
+from docspy.analyze_definitions import analyze_definitions
+from docspy.definitions import FunctionDefinition, ClassDefinition, MethodDefinition
 
 
 def test_analyze_definitions_with_function():

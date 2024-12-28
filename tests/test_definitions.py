@@ -1,4 +1,4 @@
-from docpy.definitions import (
+from docspy.definitions import (
     Definition,
     FunctionDefinition,
     ClassDefinition,

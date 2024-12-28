@@ -1,8 +1,8 @@
 import click
 import os
 import importlib.util
-from docpy.generate import generate
-from docpy.generator import Generator
+from docspy.generate import generate
+from docspy.generator import Generator
 
 
 @click.command()
@@ -57,7 +57,7 @@ def main(path, output, custom_generator, format):
             return
 
     elif format == "markdown":
-        from docpy.generators.markdown import Markdown
+        from docspy.generators.markdown import Markdown
 
         generator = Markdown()
 

@@ -1,6 +1,6 @@
 import ast
 from typing import List
-from docpy.definitions import (
+from docspy.definitions import (
     Definition,
     FunctionDefinition,
     ClassDefinition,

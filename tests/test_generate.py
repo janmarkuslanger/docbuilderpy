@@ -1,7 +1,7 @@
 import pytest
 from unittest.mock import MagicMock, patch
-from docpy.generate import generate
-from docpy.generator import Generator
+from docspy.generate import generate
+from docspy.generator import Generator
 
 
 @pytest.fixture
@@ -9,8 +9,8 @@ def mock_generator():
     return MagicMock(spec=Generator)
 
 
-@patch("docpy.generate.analyze_definitions")
-@patch("docpy.generate.load_file")
+@patch("docspy.generate.analyze_definitions")
+@patch("docspy.generate.load_file")
 @patch("os.walk")
 def test_generate(
     mock_os_walk, mock_load_file, mock_analyze_definitions, mock_generator, tmp_path

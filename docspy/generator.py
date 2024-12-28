@@ -1,6 +1,6 @@
 import abc
 from typing import List
-from docpy.definitions import Definition
+from docspy.definitions import Definition
 
 
 class Generator(abc.ABC):

@@ -1,5 +1,5 @@
 import pytest
-from docpy.load_file import load_file
+from docspy.load_file import load_file
 
 
 def test_load_file(tmp_path):
