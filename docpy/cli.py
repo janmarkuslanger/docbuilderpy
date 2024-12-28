@@ -7,17 +7,31 @@ from docpy.generator import Generator
 
 @click.command()
 @click.argument("path", type=click.Path(exists=True))
-@click.option("--output", "-o", default="docs", help="Output path for the documentation.")
-@click.option("--custom_generator", "-cg", default=None, help="A generator class extending from generator.py.")
-@click.option("--format", "-f", default="markdown", type=click.Choice(["markdown"], case_sensitive=False), help="Format of the documentation.")
-
+@click.option(
+    "--output", "-o", default="docs", help="Output path for the documentation."
+)
+@click.option(
+    "--custom_generator",
+    "-cg",
+    default=None,
+    help="A generator class extending from generator.py.",
+)
+@click.option(
+    "--format",
+    "-f",
+    default="markdown",
+    type=click.Choice(["markdown"], case_sensitive=False),
+    help="Format of the documentation.",
+)
 def main(path, output, custom_generator, format):
 
     if custom_generator:
         if not os.path.isfile(custom_generator):
-            print(f"Error: The custom generator file '{custom_generator}' does not exist.")
+            print(
+                f"Error: The custom generator file '{custom_generator}' does not exist."
+            )
             return
-        
+
         try:
             module_name = os.path.splitext(os.path.basename(custom_generator))[0]
             spec = importlib.util.spec_from_file_location(module_name, custom_generator)
@@ -26,7 +40,11 @@ def main(path, output, custom_generator, format):
 
             for attr_name in dir(module):
                 attr = getattr(module, attr_name)
-                if isinstance(attr, type) and issubclass(attr, Generator) and attr is not Generator:
+                if (
+                    isinstance(attr, type)
+                    and issubclass(attr, Generator)
+                    and attr is not Generator
+                ):
                     generator = attr()
                     break
 
@@ -40,11 +58,13 @@ def main(path, output, custom_generator, format):
 
     elif format == "markdown":
         from docpy.generators.markdown import Markdown
+
         generator = Markdown()
 
     generate(path, output, generator)
-    
+
     print(f"Docs generated {output} ({format}-Format).")
+
 
 if __name__ == "__main__":
     main()
