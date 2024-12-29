@@ -12,5 +12,6 @@ class Generator(abc.ABC):
     def generate_file(self, definitions: List[Definition]):
         pass
 
+    @abc.abstractmethod
     def get_file_format(self) -> str:
         pass

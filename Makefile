@@ -5,7 +5,7 @@ format:
 	black .
 
 check:
-	mypy src/
+	mypy docbuilderpy/
 
 test:
 	pytest tests/
