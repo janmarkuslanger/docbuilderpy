@@ -1,4 +1,3 @@
-import pytest
 from unittest.mock import MagicMock
 from docbuilderpy.generate import generate
 from docbuilderpy.generators.generator import Generator
