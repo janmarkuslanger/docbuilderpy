@@ -5,7 +5,7 @@ from docbuilderpy.definitions import Definition
 
 class Generator(abc.ABC):
     @abc.abstractmethod
-    def generate_file(self) -> str:
+    def generate(self) -> str:
         pass
 
     @abc.abstractmethod

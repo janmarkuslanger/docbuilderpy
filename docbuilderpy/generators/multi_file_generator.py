@@ -9,7 +9,7 @@ class MultiFileGenerator(Generator, abc.ABC):
     def generate(self, source_path: str, output_path: str) -> None:
         for root, _, files in os.walk(source_path):
             for file in files:
-                if file.endswith(".py"):
+                if file.endswith(".py") and not file.endswith("__init__.py"):
                     file_path = os.path.join(root, file)
                     code = load_file(file_path)
                     definitions = analyze_definitions(code, file_path)
