@@ -1,5 +1,5 @@
 from typing import List
-from docbuilderpy.generator import Generator
+from docbuilderpy.generators.generator import Generator
 from docbuilderpy.definitions import Definition
 
 

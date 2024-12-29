@@ -1,10 +1,10 @@
 from typing import List
 from docbuilderpy.definitions import Definition
-from docbuilderpy.generator import Generator
+from docbuilderpy.generators.multi_file_generator import MultiFileGenerator
 
 
-class Markdown(Generator):
-    def generate(self, definitions: List[Definition]):
+class Markdown(MultiFileGenerator):
+    def generate_file(self, definitions: List[Definition]):
         content = "# Documentation"
         for item in definitions:
 
@@ -25,3 +25,6 @@ class Markdown(Generator):
                 content += f"- Description: {item.docstring}"
 
         return content
+
+    def get_file_format(self):
+        return "md"

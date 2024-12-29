@@ -2,7 +2,7 @@ import click
 import os
 import importlib.util
 from docbuilderpy.generate import generate
-from docbuilderpy.generator import Generator
+from docbuilderpy.generators.generator import Generator
 
 
 @click.command()
@@ -57,7 +57,7 @@ def main(path, output, custom_generator, format):
             return
 
     elif format == "markdown":
-        from docbuilderpy.generators.markdown import Markdown
+        from docbuilderpy.file_generators.markdown import Markdown
 
         generator = Markdown()
 

@@ -1,7 +1,7 @@
 import pytest
 from unittest.mock import MagicMock, patch
 from docbuilderpy.generate import generate
-from docbuilderpy.generator import Generator
+from docbuilderpy.generators.generator import Generator
 
 
 @pytest.fixture
