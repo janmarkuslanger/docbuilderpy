@@ -28,9 +28,9 @@ class MultiFileGenerator(Generator, abc.ABC):
                         output_file.write(content)
 
     @abc.abstractmethod
-    def generate_file(self, definitions):
+    def generate_file(self, definitions) -> str:
         pass
 
     @abc.abstractmethod
-    def get_file_format(self):
+    def get_file_format(self) -> str:
         pass

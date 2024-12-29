@@ -23,7 +23,7 @@ from docbuilderpy.generators.generator import Generator
     type=click.Choice(["markdown"], case_sensitive=False),
     help="Format of the documentation.",
 )
-def main(path, output, custom_generator, format):
+def main(path: str, output: str, custom_generator: str, format: str):
 
     if custom_generator:
         if not os.path.isfile(custom_generator):

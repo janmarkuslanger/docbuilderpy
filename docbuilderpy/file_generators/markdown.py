@@ -1,10 +1,10 @@
-from typing import List
-from docbuilderpy.definitions import Definition
+from typing import List, Union
+from docbuilderpy.definitions import FunctionDefinition, ClassDefinition
 from docbuilderpy.generators.multi_file_generator import MultiFileGenerator
 
 
 class Markdown(MultiFileGenerator):
-    def generate_file(self, definitions: List[Definition]):
+    def generate_file(self, definitions: List[Union[FunctionDefinition, ClassDefinition]]):
         content = "# Documentation"
         for item in definitions:
 
