@@ -54,7 +54,13 @@ docbuilderpy ./my_project --custom_generator ./custom_generator.py
 
 ## 🔧 Creating Custom Generators
 
-If you want to extend the default functionality, you can create your own generator classes. The custom class must inherit from the abstract class `Generator` and implement the `generate()` method.
+If you want to extend the default functionality, you can create your own generator classes. The custom class must inherit from the abstract classes `Generator`, `SingleFileGenerator` or `MultiFileGenerator`.
+
+`Generator` if you want to control the complete generation process.
+
+`SingleFileGenerator` if you want to create a single file doc file.
+
+`MultiFileGenerator` if you want to create a multi file doc file.
 
 ### Example: Custom Generator Class
 
@@ -65,8 +71,8 @@ from docbuilderpy.generate import Generator
 from typing import List
 from docbuilderpy.definitions import Definition
 
-class CustomGenerator(Generator):
-    def generate(self, definitions: List[Definition]) -> str:
+class CustomGenerator(SingleFileGenerator):
+    def generate_file(self, definitions: List[Definition]) -> str:
         return "This is a custom generator!"
 ```
 
