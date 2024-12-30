@@ -1,6 +1,8 @@
 
 # docbuilderpy
 
+![coverage](coverage.svg)
+
 **docbuilderpy** is a tool for easily generating documentation for Python projects. It provides default functionality for generating documentation in Markdown format and allows users to include custom generators.
 
 ## 🚀 Installation

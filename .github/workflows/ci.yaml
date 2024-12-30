@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - "**/coverage.svg"
   pull_request:
     branches:
       - main
@@ -32,6 +34,9 @@ jobs:
       - name: Run tests
         run: |
           pytest --cov=docbuilderpy
+
+      - uses: GoogleCloudPlatform/github-badge-lcov@v1.0.0
+        file: ./coverage.lcov
 
       - name: Run linter
         run: |
