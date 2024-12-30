@@ -1,15 +1,15 @@
 import abc
-from typing import List
-from docbuilderpy.definitions import Definition
+from typing import List, Union
+from docbuilderpy.definitions import FunctionDefinition, ClassDefinition
 
 
 class Generator(abc.ABC):
     @abc.abstractmethod
-    def generate(self) -> str:
+    def generate(self, source_path: str, output_path: str) -> None:
         pass
 
     @abc.abstractmethod
-    def generate_file(self, definitions: List[Definition]):
+    def generate_file(self, definitions: List[Union[FunctionDefinition, ClassDefinition]]) -> str:
         pass
 
     @abc.abstractmethod

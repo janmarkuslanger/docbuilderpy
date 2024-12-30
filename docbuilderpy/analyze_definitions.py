@@ -1,16 +1,15 @@
 import ast
-from typing import List
+from typing import List, Union
 from docbuilderpy.definitions import (
-    Definition,
     FunctionDefinition,
     ClassDefinition,
     MethodDefinition,
 )
 
 
-def analyze_definitions(code: str, file: str) -> List[Definition]:
+def analyze_definitions(code: str, file: str) -> List[Union[FunctionDefinition, ClassDefinition]]:
     tree = ast.parse(code)
-    definitions = []
+    definitions: List[Union[FunctionDefinition, ClassDefinition]] = []
 
     for node in tree.body:
         if isinstance(node, ast.FunctionDef):

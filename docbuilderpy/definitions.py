@@ -7,21 +7,24 @@ from dataclasses import dataclass
 class Definition(abc.ABC):
     type: str
     name: str
-    docstring: str
+    docstring: str|None
 
 
 @dataclass
 class FunctionDefinition(Definition):
+    type = "function"
     file: str
-    arguments: list
-
-
-@dataclass
-class ClassDefinition(Definition):
-    file: str
-    methods: List[FunctionDefinition]
-
+    arguments: list[str]
 
 @dataclass
 class MethodDefinition(Definition):
-    arguments: list
+    arguments: list[str]
+
+@dataclass
+class ClassDefinition(Definition):
+    type = "class"
+    file: str
+    methods: List[MethodDefinition]
+
+
+

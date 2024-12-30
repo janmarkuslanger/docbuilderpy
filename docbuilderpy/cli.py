@@ -23,7 +23,7 @@ from docbuilderpy.generators.generator import Generator
     type=click.Choice(["markdown"], case_sensitive=False),
     help="Format of the documentation.",
 )
-def main(path: str, output: str, custom_generator: str, format: str):
+def main(path: str, output: str, custom_generator: str, format: str) -> None:
 
     if custom_generator:
         if not os.path.isfile(custom_generator):
@@ -35,7 +35,21 @@ def main(path: str, output: str, custom_generator: str, format: str):
         try:
             module_name = os.path.splitext(os.path.basename(custom_generator))[0]
             spec = importlib.util.spec_from_file_location(module_name, custom_generator)
+
+            if not spec:
+                print(
+                    f"Error: Could not load custom generator from '{custom_generator}'."
+                )
+                return
+
             module = importlib.util.module_from_spec(spec)
+
+            if not spec.loader:
+                print(
+                    f"Error: Could not load custom generator from '{custom_generator}'."
+                )
+                return
+
             spec.loader.exec_module(module)
 
             for attr_name in dir(module):
