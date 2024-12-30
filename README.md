@@ -1,6 +1,8 @@
 
 # docbuilderpy
 
+[![codecov](https://codecov.io/github/janmarkuslanger/docbuilderpy/graph/badge.svg?token=MFSMU2XYDI)](https://codecov.io/github/janmarkuslanger/docbuilderpy)
+
 **docbuilderpy** is a tool for easily generating documentation for Python projects. It provides default functionality for generating documentation in Markdown format and allows users to include custom generators.
 
 ## 🚀 Installation
