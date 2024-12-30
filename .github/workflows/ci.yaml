@@ -33,12 +33,13 @@ jobs:
 
       - name: Run tests
         run: |
-          pytest --cov=docbuilderpy
+          pytest --cov-branch --cov-report=xml
 
-      - name: Codecov
-        uses: codecov/codecov-action@v5.1.2
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v5
         with:
-          files: ./coverage.lcov
+          token: ${{ secrets.CODECOV_TOKEN }}
+          slug: janmarkuslanger/docbuilderpy
             
 
       - name: Run linter
