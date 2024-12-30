@@ -37,6 +37,10 @@ jobs:
         run: |
           flake8 .
 
+      - name: Run type checker
+        run: |
+          mypy .
+
   publish-to-pypi:
     needs: test-and-lint
     runs-on: ubuntu-latest
