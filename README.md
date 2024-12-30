@@ -1,7 +1,9 @@
 
-# docbuilderpy
+<p align="center"><img src="/logo.gif" alt="Logo" width="200"></p>
 
-![Logo](/logo.gif)
+---
+
+# docbuilderpy
 
 [![codecov](https://codecov.io/github/janmarkuslanger/docbuilderpy/graph/badge.svg?token=MFSMU2XYDI)](https://codecov.io/github/janmarkuslanger/docbuilderpy)
 
