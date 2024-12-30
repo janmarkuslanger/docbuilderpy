@@ -35,9 +35,11 @@ jobs:
         run: |
           pytest --cov=docbuilderpy
 
-      - name: Update batch
-        uses: GoogleCloudPlatform/github-badge-lcov@v1.0.0
-        file: ./coverage.lcov
+      - name: Codecov
+        uses: codecov/codecov-action@v5.1.2
+        with:
+          files: ./coverage.lcov
+            
 
       - name: Run linter
         run: |
