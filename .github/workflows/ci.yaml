@@ -35,7 +35,8 @@ jobs:
         run: |
           pytest --cov=docbuilderpy
 
-      - uses: GoogleCloudPlatform/github-badge-lcov@v1.0.0
+      - name: Update batch
+        uses: GoogleCloudPlatform/github-badge-lcov@v1.0.0
         file: ./coverage.lcov
 
       - name: Run linter
@@ -45,6 +46,7 @@ jobs:
       - name: Run type checker
         run: |
           mypy docbuilderpy/
+  
 
   publish-to-pypi:
     needs: test-and-lint
