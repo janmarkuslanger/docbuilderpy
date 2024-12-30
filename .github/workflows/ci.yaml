@@ -39,7 +39,7 @@ jobs:
 
       - name: Run type checker
         run: |
-          mypy .
+          mypy docbuilderpy/
 
   publish-to-pypi:
     needs: test-and-lint
