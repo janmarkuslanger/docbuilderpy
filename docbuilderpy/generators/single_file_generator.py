@@ -25,7 +25,9 @@ class SingleFileGenerator(Generator, abc.ABC):
 
     @override
     @abc.abstractmethod
-    def generate_file(self, definitions: List[Union[FunctionDefinition, ClassDefinition]]) -> str:
+    def generate_file(
+        self, definitions: List[Union[FunctionDefinition, ClassDefinition]]
+    ) -> str:
         pass
 
     @override

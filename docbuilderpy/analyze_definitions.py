@@ -7,7 +7,9 @@ from docbuilderpy.definitions import (
 )
 
 
-def analyze_definitions(code: str, file: str) -> List[Union[FunctionDefinition, ClassDefinition]]:
+def analyze_definitions(
+    code: str, file: str
+) -> List[Union[FunctionDefinition, ClassDefinition]]:
     tree = ast.parse(code)
     definitions: List[Union[FunctionDefinition, ClassDefinition]] = []
 

@@ -7,7 +7,6 @@ from docbuilderpy.analyze_definitions import analyze_definitions
 from docbuilderpy.definitions import FunctionDefinition, ClassDefinition
 
 
-
 class MultiFileGenerator(Generator, abc.ABC):
     @override
     def generate(self, source_path: str, output_path: str) -> None:
@@ -33,7 +32,9 @@ class MultiFileGenerator(Generator, abc.ABC):
 
     @override
     @abc.abstractmethod
-    def generate_file(self, definitions: List[Union[FunctionDefinition, ClassDefinition]]) -> str:
+    def generate_file(
+        self, definitions: List[Union[FunctionDefinition, ClassDefinition]]
+    ) -> str:
         pass
 
     @override

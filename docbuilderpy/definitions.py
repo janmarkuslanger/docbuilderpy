@@ -7,7 +7,7 @@ from dataclasses import dataclass
 class Definition(abc.ABC):
     type: str
     name: str
-    docstring: str|None
+    docstring: str | None
 
 
 @dataclass
@@ -16,15 +16,14 @@ class FunctionDefinition(Definition):
     file: str
     arguments: list[str]
 
+
 @dataclass
 class MethodDefinition(Definition):
     arguments: list[str]
+
 
 @dataclass
 class ClassDefinition(Definition):
     type = "class"
     file: str
     methods: List[MethodDefinition]
-
-
-

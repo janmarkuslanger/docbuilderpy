@@ -9,7 +9,9 @@ class Generator(abc.ABC):
         pass
 
     @abc.abstractmethod
-    def generate_file(self, definitions: List[Union[FunctionDefinition, ClassDefinition]]) -> str:
+    def generate_file(
+        self, definitions: List[Union[FunctionDefinition, ClassDefinition]]
+    ) -> str:
         pass
 
     @abc.abstractmethod
