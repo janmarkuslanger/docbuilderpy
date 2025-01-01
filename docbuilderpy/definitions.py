@@ -14,7 +14,7 @@ class Definition(abc.ABC):
 class FunctionDefinition(Definition):
     type = "function"
     file: str
-    arguments: list[str] = None
+    arguments: list[str]|None = None
 
 
 @dataclass
@@ -26,4 +26,4 @@ class MethodDefinition(Definition):
 class ClassDefinition(Definition):
     type = "class"
     file: str
-    methods: List[MethodDefinition] = None
+    methods: List[MethodDefinition]|None = None
