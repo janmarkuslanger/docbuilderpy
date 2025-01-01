@@ -15,6 +15,6 @@ class Generator(abc.ABC):
 
     @abc.abstractmethod
     def generate_file(
-        self, definitions: List[Union[FunctionDefinition, ClassDefinition]]
+        self
     ) -> str:
         pass
