@@ -8,7 +8,7 @@ def test_markdown_generator():
             type="function",
             name="my_function",
             docstring="This is a function.",
-            file="file.py"
+            file="file.py",
         ),
         ClassDefinition(
             type="class", name="MyClass", docstring="This is a class.", file="file.py"
