@@ -13,15 +13,20 @@ class Markdown(MultiFileGenerator):
             if isinstance(item, FunctionDefinition):
                 content += f"\n\n## Function: `{item.name}`\n"
                 content += f"- File: {item.file}\n"
-                content += f"- Args: {', '.join(item.arguments)}\n"
+
+                if item.arguments:
+                    content += f"- Args: {', '.join(item.arguments)}\n"
 
             elif isinstance(item, ClassDefinition):
                 content += f"\n\n## Class: `{item.name}`\n"
                 content += f"- File: {item.file}\n"
 
-                for method in item.methods:
-                    content += f"\n\n### Method: `{method.name}`\n"
-                    content += f"- Args: {', '.join(method.arguments)}\n"
+                if item.methods:
+                    for method in item.methods:
+                        content += f"\n\n### Method: `{method.name}`\n"
+
+                        if method.arguments:
+                            content += f"- Args: {', '.join(method.arguments)}\n"
 
             if item.docstring:
                 content += f"- Description: {item.docstring}"
