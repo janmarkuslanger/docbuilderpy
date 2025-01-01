@@ -16,7 +16,8 @@ def test_markdown_generator():
     ]
 
     markdown_generator = Markdown()
-    output = markdown_generator.generate_file(definitions)
+    markdown_generator.definitions = definitions
+    output = markdown_generator.generate_file()
 
     assert "# Documentation" in output
     assert "## Function: `my_function`" in output

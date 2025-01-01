@@ -4,11 +4,14 @@ from docbuilderpy.generators.multi_file_generator import MultiFileGenerator
 
 
 class Markdown(MultiFileGenerator):
-    def generate_file(
-        self, definitions: List[Union[FunctionDefinition, ClassDefinition]]
-    ) -> str:
+    source_path: str
+    output_path: str
+    file_format: str = "md"
+    definitions: List[Union[FunctionDefinition, ClassDefinition]]
+
+    def generate_file(self) -> str:
         content = "# Documentation"
-        for item in definitions:
+        for item in self.definitions:
 
             if isinstance(item, FunctionDefinition):
                 content += f"\n\n## Function: `{item.name}`\n"

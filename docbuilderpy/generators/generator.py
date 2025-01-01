@@ -4,16 +4,17 @@ from docbuilderpy.definitions import FunctionDefinition, ClassDefinition
 
 
 class Generator(abc.ABC):
+    source_path: str
+    output_path: str
+    file_format: str
+    definitions: List[Union[FunctionDefinition, ClassDefinition]]
+
     @abc.abstractmethod
-    def generate(self, source_path: str, output_path: str) -> None:
+    def generate(self) -> None:
         pass
 
     @abc.abstractmethod
     def generate_file(
-        self, definitions: List[Union[FunctionDefinition, ClassDefinition]]
+        self
     ) -> str:
-        pass
-
-    @abc.abstractmethod
-    def get_file_format(self) -> str:
         pass

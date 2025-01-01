@@ -1,7 +1,6 @@
 import click
 import os
 import importlib.util
-from docbuilderpy.generate import generate
 from docbuilderpy.generators.generator import Generator
 
 
@@ -75,7 +74,10 @@ def main(path: str, output: str, custom_generator: str, format: str) -> None:
 
         generator = Markdown()
 
-    generate(path, output, generator)
+    generator.source_path = path
+    generator.output_path = output
+    generator.file_format = format
+    generator.generate()
 
     print(f"Docs generated {output} ({format}-Format).")
 
