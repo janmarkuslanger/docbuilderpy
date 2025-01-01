@@ -78,7 +78,13 @@ from typing import List
 from docbuilderpy.definitions import Definition
 
 class CustomGenerator(SingleFileGenerator):
-    def generate_file(self, definitions: List[Definition]) -> str:
+    source_path: str
+    output_path: str
+    file_format: str
+    definitions: List[Union[FunctionDefinition, ClassDefinition]]
+
+    def generate_file(self) -> str:
+        # you can access definitions and create your own output
         return "This is a custom generator!"
 ```
 
