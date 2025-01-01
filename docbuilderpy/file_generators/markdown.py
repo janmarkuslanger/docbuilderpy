@@ -9,9 +9,7 @@ class Markdown(MultiFileGenerator):
     file_format: str = "md"
     definitions: List[Union[FunctionDefinition, ClassDefinition]]
 
-    def generate_file(
-        self
-    ) -> str:
+    def generate_file(self) -> str:
         content = "# Documentation"
         for item in self.definitions:
 

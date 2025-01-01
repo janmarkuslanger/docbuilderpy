@@ -30,7 +30,5 @@ class SingleFileGenerator(Generator, abc.ABC):
 
     @override
     @abc.abstractmethod
-    def generate_file(
-        self
-    ) -> str:
+    def generate_file(self) -> str:
         pass
