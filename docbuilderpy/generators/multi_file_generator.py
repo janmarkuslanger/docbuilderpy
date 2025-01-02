@@ -1,5 +1,6 @@
 import abc
 import os
+import re
 from typing import List, Union, override
 from docbuilderpy.generators.generator import Generator
 from docbuilderpy.load_file import load_file
@@ -24,6 +25,7 @@ class MultiFileGenerator(Generator, abc.ABC):
 
                     relative_path = os.path.relpath(file_path, self.source_path)
                     output_file_path = os.path.join(self.output_path, relative_path)
+                    output_file_path = output_file_path.replace(".py", "")
 
                     output_dir = os.path.dirname(output_file_path)
                     os.makedirs(output_dir, exist_ok=True)
