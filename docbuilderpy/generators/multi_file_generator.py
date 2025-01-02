@@ -1,6 +1,5 @@
 import abc
 import os
-import re
 from typing import List, Union, override
 from docbuilderpy.generators.generator import Generator
 from docbuilderpy.load_file import load_file
