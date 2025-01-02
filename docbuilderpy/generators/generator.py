@@ -14,7 +14,5 @@ class Generator(abc.ABC):
         pass
 
     @abc.abstractmethod
-    def generate_file(
-        self
-    ) -> str:
+    def generate_file(self) -> str:
         pass

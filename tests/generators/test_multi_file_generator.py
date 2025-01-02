@@ -1,5 +1,7 @@
 from docbuilderpy.generators.multi_file_generator import MultiFileGenerator
-#from tests.utility import setup_test_environment
+
+# from tests.utility import setup_test_environment
+
 
 def setup_test_environment(tmp_path):
     my_lib_folder = tmp_path / "my_lib"
@@ -29,7 +31,6 @@ def is_another_test():
     return my_lib_folder
 
 
-
 class TestGenerator(MultiFileGenerator):
     def generate_file(self):
         return "my_output"
@@ -50,9 +51,6 @@ def test_generate(tmp_path):
     generator.generate()
 
     base_path = tmp_path / "my_output" / "my_lib"
-    
-    assert(base_path / "test_class.html").exists()
-    assert(base_path / "utility/is_test.html").exists()
 
-
-    
+    assert (base_path / "test_class.html").exists()
+    assert (base_path / "utility/is_test.html").exists()

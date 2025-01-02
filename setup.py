@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="docbuilderpy",
-    version="0.0.3",
+    version="0.0.4",
     description="Simple creation of documentation for Python projects.",
     author="Jan-Markus Langer",
     packages=find_packages(),
