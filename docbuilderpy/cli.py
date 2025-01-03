@@ -3,7 +3,12 @@ from docbuilderpy.file_generator import MarkdownGenerator
 
 
 def main():
-    t = DocBuilder(ProjectReader, SingleFileGenerator, MarkdownGenerator)
+    t = DocBuilder(
+        'docbuilderpy',
+        'output.md',
+        ProjectReader,
+        SingleFileGenerator,
+        MarkdownGenerator)
     t.generate()
 
 if __name__ == "__main__":

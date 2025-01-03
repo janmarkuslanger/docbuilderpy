@@ -6,6 +6,8 @@ from docbuilderpy.file_generator import FileGenerator
 class DocBuilder:
     def __init__(
             self, 
+            path: str,
+            output_path: str,
             project_reader: Type[ProjectReader], 
             structure_generator: Type[StructureGenerator], 
             file_generator: Type[FileGenerator]
