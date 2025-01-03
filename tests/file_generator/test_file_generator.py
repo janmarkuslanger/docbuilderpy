@@ -9,7 +9,7 @@ class CorrectImplementedFileGenerator(FileGenerator):
 
 def test_generator():
     with pytest.raises(TypeError):
-        generator = FileGenerator()
+        FileGenerator()
 
 
 def test_correct_implemented_generator():

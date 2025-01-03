@@ -1,5 +1,4 @@
 import ast
-from typing import List
 from docbuilderpy.file_generator import FileGenerator
 from docbuilderpy.file_result import FileResult
 
@@ -7,6 +6,8 @@ from docbuilderpy.file_result import FileResult
 class MarkdownGenerator(FileGenerator):
     def generate(self) -> FileResult:
         content = "# Documentation\n\n"
+
+        no_result = "No documentation provided."
 
         if self.definitions:
             content += "## Definitions\n\n"
@@ -25,7 +26,7 @@ class MarkdownGenerator(FileGenerator):
                     if methods:
                         content += "#### Methods:\n\n"
                         for method in methods:
-                            content += f"- `{method.name}`: {ast.get_docstring(method) or 'No documentation provided.'}\n"
+                            content += f"- `{method.name}`: {ast.get_docstring(method) or {no_result}}\n"
                         content += "\n"
 
         else:

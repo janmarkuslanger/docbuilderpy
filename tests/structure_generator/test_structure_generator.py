@@ -9,7 +9,7 @@ class CorrectImplementedStructureGenerator(StructureGenerator):
 
 def test_structure_generator():
     with pytest.raises(TypeError):
-        structure_generator = StructureGenerator()
+        StructureGenerator()
 
 
 def test_correct_implemented_structure_generator():
