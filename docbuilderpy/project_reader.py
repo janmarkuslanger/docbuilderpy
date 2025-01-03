@@ -9,14 +9,24 @@ class ProjectReader:
     def __init__(self, path: str) -> None:
         self.path = path
 
+    def skip_file(self, file: str) -> bool:
+        if not file.endswith(".py"):
+            return True
+
+        if file.endswith("__init__.py"):
+            return True
+        
+        return False
+
+
     def read(self) -> List[AnalyzedResult]:
         file_results = []
 
         for root, _, files in os.walk(self.path):
             for file in files:
-                if not file.endswith(".py") and file.endswith("__init__.py"):
+                if self.skip_file(file):
                     continue
-
+                
                 file_path = os.path.join(root, file)
                 relative_path = os.path.relpath(file_path, self.path)
 

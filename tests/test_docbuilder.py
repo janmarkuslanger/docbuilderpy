@@ -1,6 +1,8 @@
+import pytest
 from docbuilderpy import DocBuilder
 
 
 def test_docbuilder():
-    docbuilder = DocBuilder()
-    assert docbuilder is not None
+    with pytest.raises(TypeError):
+        docbuilder = DocBuilder()
+    
