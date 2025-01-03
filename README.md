@@ -1,4 +1,10 @@
-# 🔧 docbuilderpy
+<p align="center"><img src="/logo.gif" alt="Logo" width="200"></p>
+
+---
+
+# docbuilderpy
+
+[![codecov](https://codecov.io/github/janmarkuslanger/docbuilderpy/graph/badge.svg?token=MFSMU2XYDI)](https://codecov.io/github/janmarkuslanger/docbuilderpy)
 
 `docbuilderpy` is a Python library designed to simplify the generation and management of documentation for Python projects. It analyzes project structures, parses source code, and generates customizable documentation files in various formats, including Markdown.
 
