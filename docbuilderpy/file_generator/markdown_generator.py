@@ -5,9 +5,12 @@ from docbuilderpy.file_result import FileResult
 
 
 class MarkdownGenerator(FileGenerator):
-    def __init__(self, definitions: List[ast.stmt] | None = None,
-            output_path: None | str = None,
-            format: None | str = None) -> None:
+    def __init__(
+        self,
+        definitions: List[ast.stmt] | None = None,
+        output_path: None | str = None,
+        format: None | str = None,
+    ) -> None:
         super().__init__(definitions, output_path, format)
 
     def generate(self) -> FileResult:
@@ -32,7 +35,7 @@ class MarkdownGenerator(FileGenerator):
                         for method in methods:
                             content += f"- `{method.name}`: {ast.get_docstring(method) or 'No documentation provided.'}\n"
                         content += "\n"
-  
+
         else:
             content += "No definitions provided.\n"
 

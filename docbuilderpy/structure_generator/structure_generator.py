@@ -5,7 +5,9 @@ from docbuilderpy.analyzed_result import AnalyzedResult
 
 class StructureGenerator(abc.ABC):
     def __init__(
-        self, output_path: None | str = None, analyzed_files: List[AnalyzedResult] = None
+        self,
+        output_path: None | str = None,
+        analyzed_files: List[AnalyzedResult] = None,
     ) -> None:
         self.output_path = output_path
 

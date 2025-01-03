@@ -15,9 +15,8 @@ class ProjectReader:
 
         if file.endswith("__init__.py"):
             return True
-        
-        return False
 
+        return False
 
     def read(self) -> List[AnalyzedResult]:
         file_results = []
@@ -26,7 +25,7 @@ class ProjectReader:
             for file in files:
                 if self.skip_file(file):
                     continue
-                
+
                 file_path = os.path.join(root, file)
                 relative_path = os.path.relpath(file_path, self.path)
 
