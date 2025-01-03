@@ -1,23 +1,18 @@
-# docbuilderpy
+# 🔧 docbuilderpy
 
 `docbuilderpy` is a Python library designed to simplify the generation and management of documentation for Python projects. It analyzes project structures, parses source code, and generates customizable documentation files in various formats, including Markdown.
 
 ---
 
-## Features
+## ✨ Features
 
-- **AST Analysis**: Extract meaningful information from Python code using Abstract Syntax Tree (AST) parsing.
-- **Documentation Generation**:
-  - Generate Markdown files for classes, functions, and modules.
-  - Create project structure visualizations.
-- **Modular Design**:
-  - Extensible components for file generation and structure building.
-  - Support for custom file generators.
-- **Integrated Testing**: Includes tests for all core functionality.
+- 🧩 **AST Analysis**: Extract meaningful information from Python code using Abstract Syntax Tree (AST) parsing.
+- 🕁️ **Documentation Generation**:
+- 🏢 **Modular Design**: Create your own implementation
 
 ---
 
-## Installation
+## 🔄 Installation
 
 Install `docbuilderpy` using pip:
 
@@ -35,7 +30,7 @@ pip install .
 
 ---
 
-## Usage
+## 🔧 Usage
 
 ### Example: Generate Documentation for a Project
 
@@ -57,20 +52,19 @@ This will generate a Markdown file named `output.md` for the specified project d
 
 ---
 
-## Docs
+## 📖 Docs
 
 ### StructureGenerator
 
-If you want to create your own structure you need to create a class that inherits from the `StructureGenerator`.
-The class must implement the `generate` method.  It can access the `self.analyzed_files` which is a list of `AnalyzedResult`
-from the project reader class. `AnalyzedResult` is a NamedTuple of path and a list of ast nodes. 
-The method must also return a List of `AnalyzedResult`. For every item in the list there should be also a file. 
-The path will be the output. The ast nodes will also be passed.  
+If you want to create your own structure, you need to create a class that inherits from the `StructureGenerator`.
+The class must implement the `generate` method. It can access `self.analyzed_files`, which is a list of `AnalyzedResult`
+from the project reader class. `AnalyzedResult` is a NamedTuple of path and a list of AST nodes.
+The method must also return a list of `AnalyzedResult`. For every item in the list, there should also be a file. The path will be the output. The AST nodes will also be passed.
 
+For example, the SingleFileGenerator: 
+In this case, every definition will be in one file. So we iterate through the files and put it into one list.
 
-For example the SingleFileGenerator: 
-In this case every definition will be in one file. So we iterate through the files and put it into one list.
-```
+```python
 class SingleFileGenerator(StructureGenerator):
     def generate(self) -> List[AnalyzedResult]:
         return [
@@ -87,12 +81,11 @@ class SingleFileGenerator(StructureGenerator):
 
 ### FileGenerator
 
-If you want to create your own file you need to create a class that inherits from the `FileGenerator`.
-The class must implement the `generate` method.  It can access the `self.definitions` which is a list of ast nodes `List[ast.stmt]`.
-It must return a NamedTuple `FileResult`. It holds the final path and the content as a string. 
+If you want to create your own file, you need to create a class that inherits from the `FileGenerator`.
+The class must implement the `generate` method. It can access `self.definitions`, which is a list of AST nodes `List[ast.stmt]`.
+It must return a NamedTuple `FileResult`. It holds the final path and the content as a string.
 
-
-```
+```python
 ...
 
 class MarkdownGenerator(FileGenerator):
@@ -109,12 +102,11 @@ class MarkdownGenerator(FileGenerator):
                 
 
         return FileResult(path=self.output_path, content=content)
-
 ```
 
 ---
 
-## Development
+## 📚 Development
 
 ### Setting up the Development Environment
 
@@ -141,19 +133,18 @@ We welcome contributions! To contribute:
 
 ---
 
-## License
+## ⚖️ License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ---
 
-## Acknowledgments
+## 🌟 Acknowledgments
 
 Thanks to all contributors who have supported this project. Your feedback and input are invaluable!
 
 ---
 
-## Contact
+## 📢 Contact
 
 For questions or support, reach out via [GitHub Issues](https://github.com/janmarkuslanger/docbuilderpy/issues).
-
