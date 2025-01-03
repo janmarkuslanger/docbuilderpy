@@ -26,7 +26,8 @@ class MarkdownGenerator(FileGenerator):
                     if methods:
                         content += "#### Methods:\n\n"
                         for method in methods:
-                            content += f"- `{method.name}`: {ast.get_docstring(method) or {no_result}}\n"
+                            doctring = ast.get_docstring(method) or "No documentation provided."
+                            content += f"- `{method.name}`: {docstring}\n"
                         content += "\n"
 
         else:
