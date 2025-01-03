@@ -72,11 +72,6 @@ For example the SingleFileGenerator:
 In this case every definition will be in one file. So we iterate through the files and put it into one list.
 ```
 class SingleFileGenerator(StructureGenerator):
-    def __init__(
-        self, output_path: None | str = None, analyzed_files: List[AnalyzedResult] = None
-    ) -> None:
-        super().__init__(output_path, analyzed_files)
-
     def generate(self) -> List[AnalyzedResult]:
         return [
             AnalyzedResult(
@@ -90,6 +85,32 @@ class SingleFileGenerator(StructureGenerator):
         ]
 ```
 
+### FileGenerator
+
+If you want to create your own file you need to create a class that inherits from the `FileGenerator`.
+The class must implement the `generate` method.  It can access the `self.definitions` which is a list of ast nodes `List[ast.stmt]`.
+It must return a NamedTuple `FileResult`. It holds the final path and the content as a string. 
+
+
+```
+...
+
+class MarkdownGenerator(FileGenerator):
+    ...
+
+    def generate(self) -> FileResult:
+        content = "# Documentation\n\n"
+
+        if self.definitions:
+            content += "## Definitions\n\n"
+
+            for node in self.definitions:
+                content += f"### Function: `{node.name}`\n\n"
+                
+
+        return FileResult(path=self.output_path, content=content)
+
+```
 
 ---
 

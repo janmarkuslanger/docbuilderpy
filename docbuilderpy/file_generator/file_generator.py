@@ -7,12 +7,11 @@ from docbuilderpy.file_result import FileResult
 class FileGenerator(abc.ABC):
     def __init__(
         self,
-        definitions: List[ast.stmt] | None = None,
-        output_path: None | str = None,
-        format: None | str = None,
+        output_path: str,
+        definitions: List[ast.stmt],
     ) -> None:
-        self.definitions = definitions
         self.output_path = output_path
+        self.definitions = definitions
         self.format = format
 
     @abc.abstractmethod

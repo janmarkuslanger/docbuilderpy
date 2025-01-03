@@ -13,5 +13,5 @@ def test_structure_generator():
 
 
 def test_correct_implemented_structure_generator():
-    structure_generator = CorrectImplementedStructureGenerator()
+    structure_generator = CorrectImplementedStructureGenerator("output_path", [])
     assert structure_generator is not None

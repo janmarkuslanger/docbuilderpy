@@ -13,5 +13,5 @@ def test_generator():
 
 
 def test_correct_implemented_generator():
-    generator = CorrectImplementedFileGenerator()
+    generator = CorrectImplementedFileGenerator([], "output_path")
     assert generator is not None

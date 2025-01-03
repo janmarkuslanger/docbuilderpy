@@ -3,7 +3,7 @@ from typing import List
 
 
 def analyze_ast(code: str) -> List[ast.stmt]:
-    ast_nodes = []
+    ast_nodes: List[ast.stmt] = []
 
     tree = ast.parse(code)
 
