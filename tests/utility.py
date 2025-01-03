@@ -4,6 +4,8 @@ def setup_test_environment(tmp_path):
 
     test_class_file = my_lib_folder / "test_class.py"
     test_class_content = """
+test = "Hagebuddne"
+
 class TestClass:
     def my_method(self):
         return "Hello from my_method"
